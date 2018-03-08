@@ -1,4 +1,7 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "ruboty/minitest"
+require 'minitest/autorun'
+require 'mocha'
 
-require "minitest/autorun"
+require 'ruboty'
+
+require 'ruboty/minitest'
+
