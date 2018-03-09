@@ -10,7 +10,7 @@ describe Ruboty::Minitest::Actions::Hello do
 
   describe '#call' do
     it '<target>が"me"の場合、helloだけ返す' do
-      # スタブで<target>を設定
+      # スタブで<hello>と<target>を設定
       mock_message.stubs(:[]).with(:hello).returns('hello')
       mock_message.stubs(:[]).with(:target).returns('me')
       # モックでreplyの引数を検証
@@ -20,9 +20,8 @@ describe Ruboty::Minitest::Actions::Hello do
     end
 
     it '<target>が"me"以外の場合、hello worldを返す' do
-      # スタブで<target>を設定
-      mock_message.stubs(:[]).with(:hello).returns('hello')
-      mock_message.stubs(:[]).with(:target).returns('world')
+      # スタブで<hello>と<target>を設定
+      mock_message.stubs(:[]).returns('world', 'hello', 'world')
       # モックでreplyの引数を検証
       mock_message.expects(:reply).with('hello world').once
 
