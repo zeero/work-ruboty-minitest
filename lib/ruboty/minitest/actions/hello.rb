@@ -5,9 +5,9 @@ module Ruboty
       class Hello < Ruboty::Actions::Base
         def call
           if message[:target] == 'me'
-            message.reply('hello')
+            message.reply(message[:hello])
           else
-            message.reply("hello #{message[:target]}")
+            message.reply("#{message[:hello]} #{message[:target]}")
           end
         end
       end
